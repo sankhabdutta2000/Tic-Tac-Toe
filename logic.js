@@ -31,7 +31,10 @@ let resultBox2 = document.querySelector(".resultBox2");
 const email = document.querySelector(".email");
 
 let currentMode = "dark";
+let gameOver = false;
 let currentTurmO = true;
+let currentWinner = true;
+
 
 let darkChoiceMode = () => {
     vsComputer.style.color = "white";
@@ -176,15 +179,69 @@ confirmNo.addEventListener("click", () => {
 
 //actual game logic,
 
+
+
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        if(currentTurmO) {
+        if (currentTurmO) {
             box.innerText = "O";
             currentTurmO = false;
-        }else{
+        } else {
             box.innerText = "X";
             currentTurmO = true;
         }
         box.disabled = true;
+        checkWinner();
+        currentWinner = true;
+        gameOver = true;
     })
 })
+
+let winPattern = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+]
+
+const checkWinner = () => {
+    for (let pattern of winPattern) {
+        let position0 = boxes[pattern[0]].innerText;
+        let position1 = boxes[pattern[1]].innerText;
+        let position2 = boxes[pattern[2]].innerText;
+
+        if (position0 != "" && position1 != "" && position2 != "") {
+            if (position0 === position1 && position1 === position2) {
+
+                winnerMsg.innerText = `winner is ${position0}`;
+                winnerMsg.style.backgroundColor = "green";
+            }
+            
+        }
+       
+        winnerMsg.style.fontWeight = "bold";
+        winnerMsg.style.textTransform = "capitalize";
+        winnerMsg.style.fontSize = "1.5rem";
+
+    }
+};
+
+newGame.addEventListener("click", () => {
+
+    Array.from(boxes).forEach(element => {
+        element.innerText = "";
+    })
+    winnerMsg.innerText = "winner is "
+    
+    currentTurmO = true;
+    currentWinner = true;
+    for (let box of boxes) {
+        box.disabled = false;
+        box.innerText = "";
+    }
+})
+//winnerMsg.style.backgroundColor = rgb(46, 53, 50);
