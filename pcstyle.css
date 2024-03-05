@@ -176,6 +176,7 @@
 }
 
 .vsComputer:hover {}
+.vsMultiPlayer:hover{}
 
 .vsMultiPlayer {
     cursor: pointer;

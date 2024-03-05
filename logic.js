@@ -21,7 +21,7 @@ let exitGame = document.querySelector(".exitGame");
 let vsComputerExit = document.querySelector(".vsComputerExit");
 let vsMultiPlayerExit = document.querySelector(".vsMultiPlayerExit");
 const gameZone = document.querySelector(".gameZone");
-let boxes = document.querySelector(".box");
+let boxes = document.querySelectorAll(".box");
 let newGame = document.querySelector(".newGame");
 let resetGame = document.querySelector(".resetGame");
 let winnerMsg = document.querySelector(".winnerMsg");
@@ -175,15 +175,14 @@ confirmNo.addEventListener("click", () => {
 })
 
 //actual game logic,
+
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if(currentTurmO) {
             box.innerText = "O";
-            console.log("o");
             currentTurmO = false;
         }else{
             box.innerText = "X";
-            console.log("x");
             currentTurmO = true;
         }
         box.disabled = true;
