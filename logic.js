@@ -225,7 +225,7 @@ const checkWinner = () => {
        
         winnerMsg.style.fontWeight = "bold";
         winnerMsg.style.textTransform = "capitalize";
-        winnerMsg.style.fontSize = "1.5rem";
+        winnerMsg.style.fontSize = "1.6rem";
 
     }
 };
