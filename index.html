@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="pcstyle.css">
+    <link rel="stylesheet" href="2ndstyle.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <button class="about"><a href="https://en.wikipedia.org/wiki/Tic-tac-toe" target="_main">about</a></button>
+        <p class="headline">tic tac toe</p>
+        <button class="mode">dark mode</button>
+    </nav>
+    <main class="frontPage">
+
+        <aside class="bgContent">
+            <div class="bgAbout">
+                <p>
+                <h1>This is a interesting game Tic Tac Toe which is performing as multiplayer and randomly with PC by
+                    the users choice.</h1>
+                <br>the game is designed and developed by<br>
+                <h2 class="name">sankhabrata dutta <br>(from india)</h2>
+                </p>
+                <div class="contactImg">
+                    <a href="https://github.com/sankhabdutta2000" target="_main"><img src="/images/githublogo.png"
+                             id="gitlogoImg"></a>
+                    <a href="https://sankhabdutta2000.github.io/" target="_main"><img src="/images/portfoliologo.png"
+                            alt="portfoilo" id="portfoliologoImg"></a>
+                </div>
+            </div>
+            <div class="bgImg">
+                <img src="./images/wallpaper3.jpeg" alt="image error">
+            </div>
+            <button class="startGame">start game</button>
+        </aside>
+        <aside class="choicePlayer">
+            <div class="vsComputer">
+                <img src="./images/computerlogo.png" alt="image error">
+                <p>vs computer</p>
+            </div>
+            <div class="vsMultiPlayer">
+                <img src="./images/multiplayerlogo.png" alt="image error">
+                <p>multiplayer</p>
+            </div>
+        </aside>
+        <aside class="workingBox">
+            <h1>work in progress...<br>updates will coming soon...</h1>
+        </aside>
+        <aside class="confirmBox">
+            <p>are you sure?</p>
+            <div class="YesNo">
+                <span class="confirmYes">yes</span>
+                <span class="confirmNo">no</span>
+            </div>
+        </aside>
+        <aside class="vsComputerConfirmBox">
+            <p>are you sure?</p>
+            <div class="vsComputerYesNo">
+                <span class="vsComputerConfirmYes">yes</span>
+                <span class="vsComputerconfirmNo">no</span>
+            </div>
+        </aside>
+        <aside class="gameArea">
+            <div class="playBtn">
+                <button class="exitGame">exit</button>
+                <button class="vsComputerExit">exit</button>
+                <button class="vsMultiPlayerExit">exit</button>
+            </div>
+            <div class="gameZone">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+            </div>
+            <div class="actionBtn">
+                <button class="newGame">new game</button>
+                <button class="resetGame">reset game</button>
+            </div>
+        </aside>
+        <aside class="winnerMsg">
+            <h4>winner is : player 0</h4>
+        </aside>
+        <aside class="msgBox">
+            <div class="msgText">result</div>
+            <div class="result">
+                <div id="player1">player 1</div>
+                <div id="player2">player 2</div>
+            </div>
+            <div class="resultBox">
+                <div id="resultBox1">
+                    <h3>0</h3>
+                </div>
+                <div id="resultBox2">
+                    <h3>0</h3>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer class="footer">
+        <p class="rights">all rights reserved &copy; 2024 || </p>
+        &nbsp <p class="email"><a href="mailto:sankhabratadutta18@gmail.com">sankhabratadutta18@gmail.com</a></p>
+    </footer>
+
+</body>
+<script src="logic.js"></script>
+
+</html>
