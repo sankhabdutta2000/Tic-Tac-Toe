@@ -34,7 +34,8 @@ let currentMode = "dark";
 let gameOver = false;
 let currentTurmO = true;
 let currentWinner = true;
-
+let OWin = 2;
+let XWin = 0;
 
 let darkChoiceMode = () => {
     vsComputer.style.color = "white";
@@ -144,7 +145,6 @@ vsMultiPlayer.addEventListener("click", () => {
     gameZone.style.display = "grid";
     newGame.style.display = "grid";
     resetGame.style.display = "grid";
-    winnerMsg.style.display = "grid";
     msgBox.style.display = "grid";
     resultBox1.style.display = "grid";
     resultBox2.style.display = "grid";
@@ -179,15 +179,15 @@ confirmNo.addEventListener("click", () => {
 
 //actual game logic,
 
-
-
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (currentTurmO) {
             box.innerText = "O";
+            box.style.fontSize = "4rem";
             currentTurmO = false;
         } else {
             box.innerText = "X";
+            box.style.fontSize = "4rem";
             currentTurmO = true;
         }
         box.disabled = true;
@@ -216,27 +216,29 @@ const checkWinner = () => {
 
         if (position0 != "" && position1 != "" && position2 != "") {
             if (position0 === position1 && position1 === position2) {
-
+                for (let box of boxes) {
+                    box.disabled = true;
+                }
                 winnerMsg.innerText = `winner is ${position0}`;
-                winnerMsg.style.backgroundColor = "green";
+                winnerMsg.style.display = "grid";
             }
-            
+
         }
-       
+
         winnerMsg.style.fontWeight = "bold";
         winnerMsg.style.textTransform = "capitalize";
         winnerMsg.style.fontSize = "1.5rem";
-
+       
     }
 };
 
 newGame.addEventListener("click", () => {
-
+    winnerMsg.style.display = "none";
     Array.from(boxes).forEach(element => {
         element.innerText = "";
     })
     winnerMsg.innerText = "winner is "
-    
+
     currentTurmO = true;
     currentWinner = true;
     for (let box of boxes) {
@@ -244,4 +246,13 @@ newGame.addEventListener("click", () => {
         box.innerText = "";
     }
 })
+
 //winnerMsg.style.backgroundColor = rgb(46, 53, 50);
+let abcd = () => {
+    if (box.innerText === "O") {
+        resultBox1.innerText = OWin++;
+    }
+    else {
+        resultBox2.innerText = XWin++;
+    }
+}

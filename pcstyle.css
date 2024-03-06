@@ -406,13 +406,14 @@
 }
 
 .winnerMsg {
-    background-color: rgb(46, 53, 50);
+    background-color: green;
     width: 20vw;
     height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20%;
+    display: none;
 }
 
 .winnerMsg h4 {
