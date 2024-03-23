@@ -2,356 +2,267 @@
     margin: 0;
     padding: 0;
 }
+body button:hover{
+    transform: scale(1.2);
+    translate: 10px;
+    transition: 0.1s;
+}
+@keyframes hover {
+    100% {
+        transform: scale(2);
+        translate: 1.3rem;
+    }
+}
+
+/*<navbar style ..............>
+==============================================*/
 
 .navbar {
-    position: sticky;
-    width: 100%;
-    height: 8vh;
-    top: 0;
-    background-color: rgb(7, 7, 61);
+    background-color: rgb(10, 10, 53);
+    color: #ffffff;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+    height: 3rem;
+    position: relative;
 }
 
 .about {
-    padding: 0.08rem;
     cursor: pointer;
-    background-color: rgb(240, 209, 34);
-    font-size: 1.5rem;
-}
-
-.about a {
-    color: black;
+    list-style: none;
     text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: capitalize;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
+    font-size: 1.3rem;
+    color: black;
+    width: 5.5rem;
+    height: 2rem;
+    background-color: rgb(212, 255, 19);
 }
 
-.about :hover {
+.about:hover {
+    opacity: 0.75;
     text-decoration: underline;
 }
 
-.headline {
-    color: aliceblue;
+.heading {
     text-transform: capitalize;
-    font-size: 2.4rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-size: 2.5rem;
 }
 
 .mode {
-    color: white;
-    background-color: rgb(0, 0, 0);
     cursor: pointer;
+    width: 6.5rem;
+    height: 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: capitalize;
-    border-radius: 1rem;
-    font-size: 1.5rem;
-    padding: 0.13rem;
-    margin: 0.1rem;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
 }
 
 .mode:hover {
+    opacity: 0.75;
     text-decoration: underline;
 }
 
-.frontPage {
+/*< home page style..................>
+=================================================*/
+
+.homePage {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: -1;
+    justify-content: space-around;
+    width: 100%;
+    height: 55vh;
+    margin-top: 4rem;
+}
+/*
+.homePageInvisibility {
+    display: none;
+}*/
+
+.homeText {
+    color: black;
+    background-color: aliceblue;
+    width: 45vw;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.8),
+        25px 0px 20px -20px rgba(0, 0, 0, 0.8),
+        0px 25px 20px -20px rgba(0, 0, 0, 0.8),
+        -25px 0px 20px -20px rgba(0, 0, 0, 0.8);
 }
 
-.bgContent {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 5rem;
-    border-radius: 3rem;
+.homeText h1 {
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.bgAbout {
-    display: grid;
-    row-gap: 1rem;
-    padding: 0.5rem;
-    width: 50%;
-    height: 23rem;
-    box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
-        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
-        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
-        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
+.homeText h2 {
+    font-size: 1.6rem;
+    text-align: justify;
 }
 
-.bgAbout p {
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.name {
-    text-transform: uppercase;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.homeText h3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .contactImg {
     display: flex;
     justify-content: space-around;
-}
-
-#gitlogoImg {
-    width: 10vw;
-    background-color: blanchedalmond;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-#gitlogoImg:hover {
-    width: 11vw;
-}
-
-#portfoliologoImg {
-    width: 10vw;
-    height: 12vh;
-    cursor: pointer;
-    background-color: blanchedalmond;
-    border-radius: 30%;
-}
-
-#portfoliologoImg:hover {
-    width: 11vw;
-}
-
-.choicePlayer {
-    position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 4rem;
-}
-
-.workingBox {
-    z-index: 0;
-    border-radius: 20%;
-    box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
-        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
-        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
-        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
-    width: 40vw;
-    height: 40vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 4rem 10rem;
+    margin-top: 3rem;
 }
 
-.workingBox h1 {
-    color: rgb(40, 0, 114);
-    font-size: 2rem;
-    text-transform: capitalize;
+#githubImg, #linkedinImg {
+    width: 8rem;
 }
 
-.vsComputer {
-    cursor: pointer;
-    background-color: rgb(223, 219, 32);
-    width: 15rem;
-    height: 15rem;
-    border-radius: 10%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
-        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
-        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
-        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
-}
-
-.vsComputer p {
-    margin-left: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.vsComputer img {
-    width: 9rem;
-}
-
-.vsComputer:hover {}
-.vsMultiPlayer:hover{}
-
-.vsMultiPlayer {
-    cursor: pointer;
-    background-color: rgb(223, 219, 32);
-    width: 15rem;
-    height: 15rem;
-    border-radius: 10%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
-        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
-        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
-        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
-}
-
-.vsMultiPlayer p {
-    margin-left: 1.1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.vsMultiPlayer img {
-    width: 9rem;
-    background-color: aqua;
-    border-radius: 45%;
-}
-
-
-.confirmBox {
-    z-index: 1;
-    border-radius: 10%;
-    box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
-        25px 0px 20px -20px rgba(0, 0, 0, 0.45),
-        0px 25px 20px -20px rgba(0, 0, 0, 0.45),
-        -25px 0px 20px -20px rgba(0, 0, 0, 0.45);
-    width: 40vw;
-    height: 40vh;
-    background-color: aliceblue;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.confirmBox p {
-    font-size: 3rem;
-    margin-left: 5rem;
-}
-
-.YesNo {
+.homeImg {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 30vw;
 }
 
-.confirmYes {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: wheat;
-    font-size: larger;
-    background-color: rgb(9, 77, 167);
-    width: 4rem;
-    height: 2rem;
+#homeWallpaper {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem;
 }
 
-.confirmYes:hover {
-    text-decoration: underline;
-}
-
-.confirmNo {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: wheat;
-    font-size: larger;
-    background-color: rgb(9, 77, 167);
-    width: 4rem;
-    height: 2rem;
-}
-
-.confirmNo:hover {
-    text-decoration: underline;
-}
-
-.gameArea {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5%;
-}
-
-/*.play-btn{
-    margin-top: 50%;
-    margin-left: 50%;
-}*/
 .startGame {
     cursor: pointer;
-    width: 10rem;
+    background-color: chartreuse;
+    width: 9.5rem;
     height: 3.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    right: 8rem;
+    font-size: 1.3rem;
     text-transform: capitalize;
-    border-radius: 9px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(179, 255, 3);
-}
-
-.startGame:hover {
-    height: 4rem;
-    font-size: 1.6rem;
-    opacity: 0.8;
-}
-
-.exitGame {
-    cursor: pointer;
-    width: 5rem;
-    height: 1.5rem;
-    position: absolute;
-    margin: 0.1rem;
-    padding: 0.15rem;
     font-weight: bold;
-    right: 13%;
-    bottom: 17%;
-    text-transform: capitalize;
-    border-radius: 9px;
-    color: aliceblue;
+    border: 1.5px solid rgb(74, 14, 88);
+    border-radius: 1rem;
+    user-select: none;
+    margin-left: -5rem;
+}
+
+/* < user choice section style.........................>
+==================================================================*/
+
+.choiceGamePage{
+    background-color: #afbecf;
+    border-radius: 2rem;
+    padding: 4rem;
+    width: 50%;
+    height: 50%;
+    margin: 5rem 18rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+}
+.choiceGamePageInvisibility{
+    display: none;
+}
+.vsComputer, .vsMultiPlayer{
+    cursor: pointer;
+    color: #ffffff;
+    background-image: linear-gradient(to top right, rgb(71, 47, 2), rgb(139, 139, 5), rgb(54, 3, 88));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 2rem;
+}
+#vsComputerLogo{
+    width: 8rem;
+}
+.vsComputerText, .vsMultiPlayerText{
+    font-size: 2rem;
+    font-weight: bold;
+}
+#vsMultiPlayerLogo{
+    width: 8rem;
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.choiceGamePage div, #githubImg, #linkedinImg:hover {
+    color: rgb(51, 2, 92);
+    transform: scale(1.2);
+    translate: 10px;
+    transition: 0.1s;
+}
+
+@keyframes hover {
+    100% {
+        transform: scale(2);
+        translate: 1.3rem;
+    }
+}
+.cancel{
+    cursor: pointer;
+    color: #ffffff;
     background-color: black;
-}
-
-.vsComputerExit {
-    cursor: pointer;
-    width: 5rem;
-    height: 1.5rem;
-    position: absolute;
-    margin: 0.1rem;
-    padding: 0.15rem;
+    width: 8.5rem;
+    height: 2.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    right: 13%;
-    bottom: 17%;
     text-transform: capitalize;
-    border-radius: 9px;
-    color: aliceblue;
-    background-color: rgb(32, 26, 26);
-}
-
-.vsMultiPlayerExit {
-    cursor: pointer;
-    width: 5rem;
-    height: 1.5rem;
+    border-radius: 1rem; 
     position: absolute;
-    margin: 0.1rem;
-    padding: 0.15rem;
-    font-weight: bold;
-    right: 13%;
-    bottom: 17%;
-    text-transform: capitalize;
-    border-radius: 9px;
-    color: aliceblue;
-    background-color: rgb(61, 28, 28);
+    margin-top: 25rem;
 }
 
-.gameZone {
-    margin-top: 8%;
+
+/*< game page style....................>
+=====================================================
+=====================================================*/
+
+/*..............<main game section..........>
+=============================================================*/
+
+/*....................<vs computer..................>
+==============================================================
+
+work later....
+
+*/
+
+/*..............................<vs multiplayer......................>
+==========================================================================*/
+
+.vsMultiPlayerGamePage {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 75vh;
+    margin-top: 2rem;
+}
+.multiPlayerGamePageInvisibility{
+    display: none;
+}
+.lowOpacity{
+    opacity: 0.2;
+}
+.gameArea {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 73vh;
+}
+
+.gameBox {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 0.7rem;
@@ -362,145 +273,200 @@
     cursor: pointer;
     width: 8rem;
     height: 8rem;
-    border-radius: 8px;
+    border-radius: 1.5rem;
     color: black;
     background-color: rgb(104, 50, 6);
     font-weight: bold;
-    font-size: 24px;
+    font-size: 3.5rem;
 }
 
-.actionBtn {
-    margin-top: 9%;
+.newResetBtn {
     display: flex;
     justify-content: space-evenly;
-}
-
-.newGame {
-    cursor: pointer;
-    width: 8rem;
-    height: 2.3rem;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-weight: bold;
-    position: relative;
-    text-transform: capitalize;
-    border-radius: 9px;
-    color: aliceblue;
-    background-color: black;
+    margin-top: 1.8rem;
 }
 
+.newGame,
 .resetGame {
     cursor: pointer;
-    width: 8rem;
-    height: 2.3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    position: relative;
-    text-transform: capitalize;
-    border-radius: 9px;
-    color: aliceblue;
+    color: #ffffff;
     background-color: black;
+    width: 7.5rem;
+    height: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 1rem;
 }
 
-.winnerMsg {
-    background-color: green;
-    width: 20vw;
-    height: 15vh;
+/*..............<messege section..........>
+=====================================================*/
+
+.messege {
+    color: black;
+    background-color: rgb(187, 178, 178);
+    width: 16rem;
+    height: 8rem;
+    border-radius: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+/*..............<scoreboard section..........>
+=====================================================*/
+
+.scoreBox {
+    padding: 1rem;
+    color: #ffffff;
+    background-color: rgb(153, 36, 58);
+    width: 16rem;
+    height: 18rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+.scoreText {
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+
+.playerScoreBox {
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 14rem;
+    font-size: 1.4rem;
+    text-decoration: underline;
+}
+
+.playerOScore,
+.playerXScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.OScore,
+.XScore {
+    background-color: aliceblue;
+    text-decoration: none;
+    color: black;
+    width: 5rem;
+    height: 3.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.exitGame {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: black;
+    width: 6.5rem;
+    height: 2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 1rem;
+    margin-top: 2.5rem;
+}
+
+/*<confirm box style.....................>
+========================================================*/
+
+.confirmBox{
+    background-color: #5b7594;
+    border-radius: 2rem;
+    padding: 2rem;
+    width: 25%;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    user-select: none;
+    position: absolute;
+    margin: 7rem 33rem;
+    opacity: 1;
+    z-index: 2;
+}
+.confirmText{
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.exitCancel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15rem;
+}
+.confirmBox span{
+    cursor: pointer;
+    color: wheat;
+    background-color: rgb(5, 5, 100);
+    width: 5rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+.confirmBoxInvisibility{
     display: none;
 }
 
-.winnerMsg h4 {
-    text-transform: capitalize;
-font-size: 1.5rem;
-}
-
-.msgBox {
-    background-color: brown;
-    width: 20vw;
-    height: 38vh;
-    border-radius: 10%;
-    /*position: relative;
-    margin-left: 10rem;*/
-    text-align: center;
-}
-
-.msgText {
-    color: aliceblue;
-    margin-top: 0.75rem;
-    text-transform: capitalize;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-.result {
-    color: aliceblue;
-    text-transform: capitalize;
-    text-decoration: underline;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 0.75rem;
-}
-
-.resultBox {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
-}
-
-#resultBox1 {
- 
-    background-color: aliceblue;
-    width: 5rem;
-    height: 3rem;
-    text-align: center;
-}
-
-#resultBox1 h3 {
-    margin-top: 5px;
-    font-size: 2rem;
-}
-
-#resultBox2 {
-    background-color: aliceblue;
-    width: 5rem;
-    height: 3rem;
-    text-align: center;
-}
-
-#resultBox2 h3 {
-    margin-top: 5px;
-    font-size: 2rem;
-}
+/*< footer style........................>
+========================================================*/
 
 .footer {
+    background-color: rgb(34, 32, 32);
+    opacity: 1;
+    width: 100%;
+    height: 7vh;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    height: 6vh;
-    color: aliceblue;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    font-size: 9px;
-    background-color: rgb(51, 45, 45);
 }
 
 .footer p {
-    font-size: 1.3rem;
+    color: aliceblue;
 }
 
 .email a {
+    color: #6e8fbb;
     text-decoration: none;
-    color: rgb(0, 136, 255);
+
 }
 
 .email a:hover {
     text-decoration: underline;
+    color: #FF671F;
+}
+
+.portfolioImg img {
+    width: 10vw;
+    background-color: bisque;
+    height: 4vh;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.portfolioImg img:hover {
+    opacity: 0.75;
 }

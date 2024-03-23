@@ -1,199 +1,103 @@
 "use strict";
+
 const body = document.querySelector("body");
-const frontPage = document.querySelector(".frontPage");
-const navbar = document.querySelector(".navbar");
-let mode = document.querySelector(".mode");
-const bgContent = document.querySelector(".bgContent");
-const bgAbout = document.querySelector(".bgAbout");
-let gitlogoImg = document.querySelector("#gitlogoImg");
-const portfoliologoImg = document.querySelector("#portfoliologoImg");
-const choicePlayer = document.querySelector(".choicePlayer");
-let vsComputer = document.querySelector(".vsComputer");
-let vsMultiPlayer = document.querySelector(".vsMultiPlayer");
-let workingBox = document.querySelector(".workingBox");
-let confirmBox = document.querySelector(".confirmBox");
-let vsComputerConfirmBox = document.querySelector(".vsComputerConfirmBox");
-let confirmYes = document.querySelector(".confirmYes");
-let confirmNo = document.querySelector(".confirmNo");
-const gameArea = document.querySelector(".gamearea");
-let startGame = document.querySelector(".startGame");
-let exitGame = document.querySelector(".exitGame");
-let vsComputerExit = document.querySelector(".vsComputerExit");
-let vsMultiPlayerExit = document.querySelector(".vsMultiPlayerExit");
-const gameZone = document.querySelector(".gameZone");
-let boxes = document.querySelectorAll(".box");
-let newGame = document.querySelector(".newGame");
-let resetGame = document.querySelector(".resetGame");
-let winnerMsg = document.querySelector(".winnerMsg");
-let msgBox = document.querySelector(".msgBox");
-let resultBox1 = document.querySelector(".resultBox1");
-let resultBox2 = document.querySelector(".resultBox2");
-const email = document.querySelector(".email");
-
-let currentMode = "dark";
-let gameOver = false;
-let currentTurmO = true;
-let currentWinner = true;
-let OWin = 2;
-let XWin = 0;
-
-let darkChoiceMode = () => {
-    vsComputer.style.color = "white";
-    vsComputer.style.backgroundColor = "black";
-    vsMultiPlayer.style.color = "white";
-    vsMultiPlayer.style.backgroundColor = "black";
-
-}
-let lightChoiceMode = () => {
-    vsComputer.style.color = "black";
-    vsComputer.style.backgroundColor = "rgb(223, 219, 32)";
-    vsMultiPlayer.style.color = "black";
-    vsMultiPlayer.style.backgroundColor = "rgb(223, 219, 32)";
-
-}
+const mode = document.querySelector(".mode");
+const homePage = document.querySelector(".homePage");
+const homePageInvisibility = document.querySelector(".homePageInvisibility");
+const homeText = document.querySelector(".homeText");
+const homeTextDark = document.querySelector(".homeTextDark");
+const startGame = document.querySelector(".startGame");
+const choiceGamePage = document.querySelector(".choiceGamePage");
+const choiceGamePageInvisibility = document.querySelector(".choiceGamePageInvisibility");
+const vsComputer = document.querySelector(".vsComputer");
+const vsMultiPlayer = document.querySelector(".vsMultiPlayer");
+const cancel = document.querySelector(".cancel");
 
 
-//adding dark mode feature,
+
+const vsMultiPlayerGamePage = document.querySelector(".vsMultiPlayerGamePage");
+const multiPlayerGamePageInvisibility = document.querySelector(".multiPlayerGamePageInvisibility");
+const lowOpacity = document.querySelector(".lowOpacity");
+const gameBox = document.querySelector(".gameBox");
+const boxes = document.querySelectorAll(".box");
+const newGame = document.querySelector(".newGame");
+const resetGame = document.querySelector(".resetgame");
+let messege = document.querySelector(".messege");
+let OScore = document.querySelector(".OScore");
+let XScore = document.querySelector(".XScore");
+const exitGame = document.querySelector(".exitGame");
+const confirmBox = document.querySelector(".confirmBox");
+const confirmBoxInvisibility = document.querySelector(".confirmBoxInvisibility");
+const confirmExit = document.querySelector(".confirmExit");
+const confirmCancel = document.querySelector(".confirmCancel");
+
+let currenMode = "light";
+let currentTurnO = true;
+let OPlayerScore = Number.parseInt(0);
+OScore.textContent = OPlayerScore;
+
+let XPlayerScore = Number.parseInt(0);
+XScore.textContent = XPlayerScore;
+
 mode.addEventListener("click", () => {
-    if (currentMode === "dark") {
-        currentMode = "light";
-        mode.innerText = "light mode";
+    if (currenMode === "light") {
+        currenMode = "dark";
+        mode.textContent = "light mode";
         mode.style.color = "black";
         mode.style.backgroundColor = "white";
         body.style.backgroundColor = "black";
-        bgAbout.style.color = "white";
-        gitlogoImg.style.backgroundColor = "white";
-        workingBox.style.backgroundColor = "black";
-        workingBox.style.color = "white";
-        darkChoiceMode();
-
+        homeText.style.color = "white";
+        homeText.style.backgroundColor = "rgb(69,69,69)";
+        cancel.style.color = "black"
+        cancel.style.backgroundColor = "white";
     } else {
-        currentMode = "dark";
-        mode.innerText = "dark mode";
+        currenMode = "light";
+        mode.textContent = "dark mode";
         mode.style.color = "white";
         mode.style.backgroundColor = "black";
         body.style.backgroundColor = "white";
-        bgAbout.style.color = "black";
-        workingBox.style.backgroundColor = "white";
-        workingBox.style.color = 'white';
-
-        lightChoiceMode();
+        homeText.style.color = "black";
+        homeText.style.backgroundColor = "white";
+        cancel.style.color = "white"
+        cancel.style.backgroundColor = "black";
     }
 })
 
-let startingInvisibility = () => {
-    choicePlayer.style.display = "none";
-    workingBox.style.display = "none";
-    confirmBox.style.display = "none";
-    vsComputerConfirmBox.style.display = "none";
-    newGame.style.display = "none";
-    resetGame.style.display = "none";
-    vsComputerExit.style.display = "none";
-    vsMultiPlayerExit.style.display = "none";
-    exitGame.style.display = "none";
-    gameZone.style.display = "none";
-    winnerMsg.style.display = "none";
-    msgBox.style.display = "none";
-}
-startingInvisibility();
-
-gitlogoImg.addEventListener("click", () => {
-    URL("");
+startGame.addEventListener("click", ()=>{
+    homePage.style.display = "none";
+    choiceGamePage.classList.remove("choiceGamePageInvisibility");
+})
+cancel.addEventListener("click", ()=>{
+    homePage.style.display = "flex";
+    choiceGamePage.classList.add("choiceGamePageInvisibility");
 })
 
-startGame.addEventListener("click", () => {
-    bgContent.style.opacity = "0.4";
-    choicePlayer.style.display = "grid";
-    vsComputer.style.display = "grid";
-    vsMultiPlayer.style.display = "grid";
-    exitGame.style.display = "grid";
-})
-exitGame.addEventListener("click", () => {
-    choicePlayer.style.display = "none";
-    bgContent.style.opacity = "1";
-    exitGame.style.display = "none";
-})
-
-vsComputer.addEventListener("click", () => {
-    bgContent.style.display = "none";
-    startGame.style.display = "none";
-    choicePlayer.style.display = "none";
-    workingBox.style.display = "grid";
-    exitGame.style.display = "none";
-    vsComputerExit.style.display = "grid";
-    vsMultiPlayerExit.style.display = "none";
-})
-vsComputerExit.addEventListener("click", () => {
-    workingBox.style.display = "none";
-    vsComputerExit.style.display = "none";
-    vsMultiPlayerExit.style.display = "none";
-    exitGame.style.display = "none";
-    bgContent.style.display = "grid";
-    startGame.style.display = "grid";
-    choicePlayer.style.display = "none";
-    bgContent.style.opacity = "1";
-    bgContent.style.display = "flex";
-})
-vsMultiPlayer.addEventListener("click", () => {
-    workingBox.style.display = "none";
-    vsComputerExit.style.display = "none";
-    vsMultiPlayerExit.style.display = "grid";
-    exitGame.style.display = "none";
-    bgContent.style.display = "none";
-    startGame.style.display = "none";
-    choicePlayer.style.display = "none";
-    gameZone.style.display = "grid";
-    newGame.style.display = "grid";
-    resetGame.style.display = "grid";
-    msgBox.style.display = "grid";
-    resultBox1.style.display = "grid";
-    resultBox2.style.display = "grid";
-})
-vsMultiPlayerExit.addEventListener("click", () => {
-
-    confirmBox.style.display = "grid";
-})
-confirmYes.addEventListener("click", () => {
-    workingBox.style.display = "none";
-    vsComputerExit.style.display = "none";
-    vsMultiPlayerExit.style.display = "none";
-    exitGame.style.display = "none";
-    bgContent.style.display = "grid";
-    startGame.style.display = "grid";
-    choicePlayer.style.display = "none";
-    bgContent.style.opacity = "1";
-    bgContent.style.display = "flex";
-    confirmBox.style.display = "none";
-    gameZone.style.display = "none";
-    newGame.style.display = "none";
-    resetGame.style.display = "none";
-    winnerMsg.style.display = "none";
-    msgBox.style.display = "none";
-    resultBox1.style.display = "none";
-    resultBox2.style.display = "none";
-})
-confirmNo.addEventListener("click", () => {
-    confirmBox.style.display = "none";
+/*
+vsComputer.addEventListener("click", ()=>{
 
 })
+*/
 
-//actual game logic,
+vsMultiPlayer.addEventListener("click", ()=>{
+    homePage.style.display = "none";
+    choiceGamePage.classList.add("choiceGamePageInvisibility");
+    vsMultiPlayerGamePage.classList.remove("lowOpacity");
+    vsMultiPlayerGamePage.classList.remove("multiPlayerGamePageInvisibility");
+})
 
-boxes.forEach((box) => {
-    box.addEventListener("click", () => {
-        if (currentTurmO) {
-            box.innerText = "O";
-            box.style.fontSize = "4rem";
-            currentTurmO = false;
-        } else {
-            box.innerText = "X";
-            box.style.fontSize = "4rem";
-            currentTurmO = true;
+
+boxes.forEach((box)=>{
+    box.addEventListener("click", ()=>{
+        if(currentTurnO){
+            currentTurnO = false;
+            box.textContent = "O";
+        }else{
+            currentTurnO = true;
+            box.textContent = "X";
         }
         box.disabled = true;
         checkWinner();
-        currentWinner = true;
-        gameOver = true;
+        
     })
 })
 
@@ -208,51 +112,104 @@ let winPattern = [
     [2, 4, 6],
 ]
 
-const checkWinner = () => {
-    for (let pattern of winPattern) {
-        let position0 = boxes[pattern[0]].innerText;
-        let position1 = boxes[pattern[1]].innerText;
-        let position2 = boxes[pattern[2]].innerText;
+let checkWinner = ()=>{
+    for(let pattern of winPattern){
+        let position0 = boxes[pattern[0]].textContent;
+        let position1 = boxes[pattern[1]].textContent;
+        let position2 = boxes[pattern[2]].textContent;
 
         if (position0 != "" && position1 != "" && position2 != "") {
-            if (position0 === position1 && position1 === position2) {
-                for (let box of boxes) {
+            if (position0 === position1 && position1 === position2){
+                for(let box of boxes){
                     box.disabled = true;
                 }
-                winnerMsg.innerText = `winner is ${position0}`;
-                winnerMsg.style.display = "grid";
+                messege.textContent = `winner is player ${position0}`;
+                messege.style.backgroundColor = "green";
+                
             }
-
+           
         }
-
-        winnerMsg.style.fontWeight = "bold";
-        winnerMsg.style.textTransform = "capitalize";
-        winnerMsg.style.fontSize = "1.5rem";
-       
-    }
-};
-
-newGame.addEventListener("click", () => {
-    winnerMsg.style.display = "none";
-    Array.from(boxes).forEach(element => {
-        element.innerText = "";
-    })
-    winnerMsg.innerText = "winner is "
-
-    currentTurmO = true;
-    currentWinner = true;
-    for (let box of boxes) {
-        box.disabled = false;
-        box.innerText = "";
-    }
-})
-
-//winnerMsg.style.backgroundColor = rgb(46, 53, 50);
-let abcd = () => {
-    if (box.innerText === "O") {
-        resultBox1.innerText = OWin++;
-    }
-    else {
-        resultBox2.innerText = XWin++;
+        
     }
 }
+
+let score = ()=>{
+    if(messege.textContent = "Winner Is Player O"){
+        OPlayerScore++;
+    }else{
+        XPlayerScore++;
+    }
+}
+
+newGame.addEventListener("click",()=>{
+    boxes.forEach((box)=>{
+        box.textContent = "";
+    })
+    currentTurnO = true;
+    for(let box of boxes){
+        box.disabled = false;
+        box.textContent = "";
+    }
+    messege.style.backgroundColor = "rgb(187, 178, 178)";
+    messege.textContent = "play the game";
+})
+
+
+exitGame.addEventListener("click", ()=>{
+    homePage.style.display = "none";
+    choiceGamePage.classList.add("choiceGamePageInvisibility");
+    /*vsMultiPlayerGamePage.classList.add("multiPlayerGamePageInvisibility");*/
+    vsMultiPlayerGamePage.classList.add("lowOpacity");
+    confirmBox.classList.remove("confirmBoxInvisibility");
+})
+confirmExit.addEventListener("click", ()=>{
+    homePage.style.display = "flex";
+    choiceGamePage.classList.add("choiceGamePageInvisibility");
+    confirmBox.classList.add("confirmBoxInvisibility");
+    vsMultiPlayerGamePage.classList.add("multiPlayerGamePageInvisibility");
+    
+})
+confirmCancel.addEventListener("click", ()=>{
+    confirmBox.classList.add("confirmBoxInvisibility");
+    vsMultiPlayerGamePage.classList.remove("multiPlayerGamePageInvisibility");
+    vsMultiPlayerGamePage.classList.remove("lowOpacity");
+})
+
+
+
+
+
+
+
+/*
+const showHomePage = ()=>{
+    homePage.style.display = "flex"
+};
+const removeHomePage =()=>{
+    homePage.style.display = "none"
+};
+const showChoiceGamePage = ()=>{
+    choiceGamePage.classList.remove("choiceGamePageInvisibility")
+};
+const removeChoiceGamePage =()=>{
+    choiceGamePage.classList.add("choiceGamePageInvisibility")
+};
+
+
+const showMultiPlayerGamePage = ()=>{
+    vsMultiPlayerGamePage.classList.remove("multiPlayerGamePageInvisibility")
+};
+const removeMultiPlayerGamePage = ()=>{
+    vsMultiPlayerGamePage.classList.add("multiPlayerGamePageInvisibility")
+};
+
+startGame.addEventListener("click", removeHomePage, showChoiceGamePage);
+cancel.addEventListener("click", showHomePage, removeChoiceGamePage);
+
+/*
+vsComputer.addEventListener("click", ()=>{
+
+})
+
+
+vsMultiPlayer.addEventListener("click", removeHomePage, removeChoiceGamePage, showMultiPlayerGamePage);*/
